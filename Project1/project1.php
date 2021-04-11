@@ -26,18 +26,23 @@
     </style>
   </head>
   <body>
+    <?php 
+        $connect = mysqli_connect('127.0.0.1', 'root', 'root', 'project1');
+        $query = mysqli_query($connect, 'SELECT * FROM project1');
+    ?>
 
 
 
 
 
 
-
-      <div style="height:200px; background-color: #E95258">
-          
-            <img src="logo.png" style="width:700px">
-            <h1 style="color:white; margin-bottom:100px; font-family:Sansation-Light" class="text-end">Оставить отзыв</h1>  
-      </div> 
+      <div style="height:100px; background-color: #E95258" class="row">
+          <div>
+            <img src="logo.png" style="width:400px" class="col-2">
+            <!---<h1 style="color:white; font-family:Sansation-Light" class="text-end col-9 pt-3">Зарегестрироваться</h1> -->
+            <a href="Login.php"><button type="button" class="btn btn-danger col-9" href="Login.php">Регистрация</button></a>
+          </div>
+      </div>  
 
       <!--люди находят людей-->
       <div class="row">
@@ -47,12 +52,12 @@
        </div>
        <div class="col-6" style="height: 2000px">
           <h1 class="text-center pt-5" style="font-family:Sansation-Light; font-size: 500%">Клиенты находят докторов</h1>
-          <h2 class="text-center pt-5" style="font-family:Sansation-Light; font-size: 250%"> текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст   </h2>
+          <h2 class="text-center pt-5" style="font-family:Sansation-Light; font-size: 250%">  текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст   </h2>
        </div>
       </div>
 
       <!---Услуги врачей-->
-      <div style="height:2000px; background-color: #32495E">
+      <div style="height:1500px; background-color: #32495E">
         <div>
           <h1 style="color:white; font-family:Sansation-Light; font-size: 500%" class="">Услуги врачей</h1>
           
@@ -87,15 +92,31 @@
           
         </div> 
         <div class="row">
-          <div class="col-4 bg-light" style="height:1000px; margin-left: 300px">
-            <img src="image.jpg" style="width:500px">
-            <div style="height:100px; background-color: #E95258; margin-bottom: 500px">
+          <div class="col-4 bg-light" style="height:450px; margin-left: 300px">
+            <img src="image.jpg" style="width:618px; height: 334px">
+            <div style="height:117px; background-color: #E95258; margin-bottom: 700px">
+               <?php $result = $query->fetch_assoc();  ?>
+            <h1>ФИО<?php echo $result['Name']; ?> </h1>
+            <p><?php echo $result['Number']; ?> </p>
+            <p> Эмейл<?php echo $result['Email']; ?> </p>
             </div>
           </div>
-
-          <div class="col-4 bg-light ms-5" style="height:1000px">
-            <img src="image.jpg" style="width:500px">
-            <div style="height:100px; background-color: #E95258; margin-bottom: 500px">
+          <div class="col-4 bg-light" style="height:450px; margin-left: 300px">
+            <img src="image.jpg" style="width:618px; height: 334px">
+            <div style="height:117px; background-color: #E95258; margin-bottom: 700px">
+               <?php $result = $query->fetch_assoc();  ?>
+            <h1>ФИО<?php echo $result['Name']; ?> </h1>
+            <p><?php echo $result['Number']; ?> </p>
+            <p> Эмейл<?php echo $result['Email']; ?> </p>
+            </div>
+          </div>
+          <div class="col-4 bg-light" style="height:450px; margin-left: 300px">
+            <img src="image.jpg" style="width:618px; height: 334px">
+            <div style="height:117px; background-color: #E95258; margin-bottom: 700px">
+               <?php $result = $query->fetch_assoc();  ?>
+            <h1>ФИО<?php echo $result['Name']; ?> </h1>
+            <p><?php echo $result['Number']; ?> </p>
+            <p> Эмейл<?php echo $result['Email']; ?> </p>
             </div>
           </div>
 
@@ -108,9 +129,8 @@
         <a href="Login.php"><button type="button" class="btn btn-danger">Sign up</button></a>
 
       </div>
-
+      <
       
-
 
 
 

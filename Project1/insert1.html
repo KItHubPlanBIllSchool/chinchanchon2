@@ -1,0 +1,6 @@
+<?php
+	$connect = mysqli_connect('127.0.0.1', 'root', '', 'project');
+	$insert = mysqli_query($connect, 'INSERT INTO vrachi (Name,Number,Email,Klinika) VALUES ("'.$_GET['login'].'", "'.$_GET['number'].'", "'.$_GET['email'].'", "'.$_GET['klinika'].'")');
+	header('Location:project1.php');
+
+ ?>
